@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet"
+          th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" />
+</head>
+<body>
+<form action="#" th:action="@{/login}" th:object="${user}" method="post">
+    <h1>Please Login First...</h1>
+    <table class="table">
+        <tr>
+            <td>Account:</td>
+            <td><input type="text" th:field="*{account}" /></td>
+            <td th:if="${#fields.hasErrors('account')}" th:errors="*{account}">Account Error</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" th:field="*{password}" /></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>
+            <td><button >register</button></td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript"
+        th:src="@{webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script type="text/javascript"
+        th:src="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+</body>
+</html>
+
